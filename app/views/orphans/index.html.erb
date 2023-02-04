@@ -23,7 +23,15 @@
         <td><%= orphan.name %></td>
         <td><%= orphan.description %></td>
         <td><%= orphan.age %></td>
-        <td><%= orphan.image %></td>
+
+        <td><% if orphan.image.file.nil? %>
+         <% else %>
+         <%= image_tag orphan.image.url, class: "im_prod" %></td>
+         <% end %>
+
+
+
+
         <td><%= orphan.sex %></td>
 
         <td><%= link_to 'Show', orphan %></td>
@@ -39,7 +47,10 @@
         <td><%= orphan.name %></td>
         <td><%= orphan.description %></td>
         <td><%= orphan.age %></td>
-        <td><%= orphan.image %></td>
+        <td><% if orphan.image.file.nil? %>
+         <% else %>
+         <%= image_tag orphan.image.url, class: "im_prod" %></td>
+         <% end %>
         <td><%= orphan.sex %></td>
 
         <td><%= link_to 'Show', orphan %></td>
